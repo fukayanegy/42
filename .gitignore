@@ -1,0 +1,9 @@
+a.out
+gnl.a
+*.gch
+
+# 以下はintra提出時に不要なファイル
+# main.c
+# test*.txt
+# Makefile
+# README.md
