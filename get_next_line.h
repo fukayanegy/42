@@ -6,7 +6,7 @@
 /*   By: etakaham <etakaham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:53 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/17 13:42:43 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/17 21:15:14 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
+char	*ft_search_newline(char *s);
+char	*ft_strjoin(const char *s1, const char *s2);
 
 #endif
