@@ -6,7 +6,7 @@
 /*   By: etakaham <etakaham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:57 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/17 14:22:10 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/17 20:54:51 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*get_next_line(int fd)
 		free(res);
 		return (NULL);
 	}
-	return (res);
+	if (ft_search_newline(res) == 1)
+		return (res);
 }
