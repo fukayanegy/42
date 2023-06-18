@@ -6,7 +6,7 @@
 /*   By: etakaham <etakaham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:57 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/17 21:42:26 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:24:07 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*get_next_line(int fd)
 	char		*res;
 	static char	*read_data;
 
+	res = NULL;
 	if (read(fd, res, 0) == -1)
 		return (NULL);
 	res = malloc(sizeof(char) * (BUFFER_SIZE + 1));

@@ -6,19 +6,18 @@
 #    By: etakaham <etakaham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/17 12:19:14 by etakaham          #+#    #+#              #
-#    Updated: 2023/06/17 14:16:25 by etakaham         ###   ########.fr        #
+#    Updated: 2023/06/18 20:16:16 by etakaham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all fclean re clean
-NAME	= gnl.a
-CC		= gcc
+NAME	= get_next_line.a
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 SRCS	= get_next_line.c get_next_line_utils.c
 OBJS	= $(SRCS:.c=.o)
 
-.c=.o:
-	$(CC) $(CFLAGS) -c $< -o $@ -I
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
@@ -32,3 +31,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all fclean re clean

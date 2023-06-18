@@ -1,5 +1,5 @@
 a.out
-gnl.a
+*.a
 *.gch
 
 # 以下はintra提出時に不要なファイル
