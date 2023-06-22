@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:08:02 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/22 16:05:08 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:08:59 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len] == '\0')
+	while (s[len] != '\0')
 		len++;
 	return (len);
 }
@@ -29,7 +29,7 @@ char	*ft_search_newline(char *s)
 	size_t	j;
 
 	i = 0;
-	while (s[i] == '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == '\n')
 		{
@@ -69,7 +69,6 @@ static void	ft_strjoin_support(char const *s1, char const *s2, char *res)
 		i++;
 	}
 	res[s_1_len + s_2_len] = '\0';
-	return ;
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
