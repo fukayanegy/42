@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 15:50:18 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/22 20:27:45 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/22 20:43:47 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	char	s[] = "abcde\nfgdh";
+	char	*s = "abcde\nfgdh";
 	char	t[] = "abcdefgdh";
 	char	*res_1;
 	s = ft_skip_newline(s);

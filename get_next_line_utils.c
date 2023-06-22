@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-char	*ft_skip_newline(char *s)
+char	*ft_skip_newline(const char *s)
 {
 	size_t	i;
 	size_t	j;
@@ -39,6 +39,7 @@ char	*ft_skip_newline(char *s)
 	i++;
 	while (i < ft_strlen(s))
 		result[j++] = s[i++];
+	result[j] = '\0';
 	return (result);
 }
 
