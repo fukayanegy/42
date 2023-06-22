@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 12:12:52 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/22 16:03:27 by etakaham         ###   ########.fr       */
+/*   Created: 2023/06/22 15:50:18 by etakaham          #+#    #+#             */
+/*   Updated: 2023/06/22 16:03:00 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdio.h>
 
-# define TEST_PATH "test_1.txt"
-
 int	main(void)
 {
-	int		fd;
-	char	*line;
-
-	line = "";
-	fd = open(TEST_PATH, O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s\n", line);
-	free(line);
+	char	s[] = "abcdefgdh";
+	char	t[] = "abcdefgdh";
+	size_t len = ft_strlen(s);
+	char	*res_1 = ft_search_newline(s);
+	char	*res_2 = ft_strjoin(s, t);
+	printf("%zu\n", len);
+	printf("%s\n", res_1);
+	printf("%s\n", res_2);
 	return (0);
 }

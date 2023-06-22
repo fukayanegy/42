@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etakaham <etakaham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:08:02 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/18 20:22:02 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/22 16:05:08 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,32 +48,43 @@ char	*ft_search_newline(char *s)
 	return (NULL);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
+static void	ft_strjoin_support(char const *s1, char const *s2, char *res)
 {
 	size_t	i;
-	size_t	s1_len;
-	size_t	s2_len;
-	char	*result;
+	size_t	s_1_len;
+	size_t	s_2_len;
+
+	s_1_len = ft_strlen(s1);
+	s_2_len = ft_strlen(s2);
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		res[i] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		res[s_1_len + i] = s2[i];
+		i++;
+	}
+	res[s_1_len + s_2_len] = '\0';
+	return ;
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t	s_1_len;
+	size_t	s_2_len;
+	char	*res;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	result = malloc(sizeof(char) * (s1_len + s2_len + 1));
-	if (result == NULL)
+	s_1_len = ft_strlen(s1);
+	s_2_len = ft_strlen(s2);
+	res = malloc((sizeof(char)) * (s_1_len + s_2_len + 1));
+	if (res == NULL)
 		return (NULL);
-	i = 0;
-	while (i < s1_len)
-	{
-		result[i] = s1[i];
-		i++;
-	}
-	i = 0;
-	while (i < s2_len)
-	{
-		result[s1_len + i] = s2[i];
-		i++;
-	}
-	result[s1_len + s2_len] = '\0';
-	return (result);
+	ft_strjoin_support(s1, s2, res);
+	return (res);
 }
