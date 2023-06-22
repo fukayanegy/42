@@ -76,9 +76,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s_1_len;
 	size_t	s_2_len;
 	char	*res;
+	const char	*empty_str = "";
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	if (s1 == NULL && s2 != NULL)
+		return (ft_strjoin(s2, empty_str));
+	else if (s1 != NULL && s2 == NULL)
+		return (ft_strjoin(s1, empty_str));
+	else if (s1 == NULL && s2 == NULL)
+		return(NULL);
 	s_1_len = ft_strlen(s1);
 	s_2_len = ft_strlen(s2);
 	res = malloc((sizeof(char)) * (s_1_len + s_2_len + 1));
