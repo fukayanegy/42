@@ -1,6 +1,7 @@
 a.out
 *.a
 *.gch
+.DS_Store
 
 # 以下はintra提出時に不要なファイル
 # main.c
