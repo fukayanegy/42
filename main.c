@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:12:52 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/22 19:05:09 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/22 20:23:40 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,6 @@
 # define TEST_PATH "test_1.txt"
 
 int	main(void)
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	line = "";
-	fd = open(TEST_PATH, O_RDONLY);
-	line = get_next_line(fd);
-	printf("%s\n", line);
-	free(line);
-	return (0);
-}
 {
 	int		fd;
 	char	*line;

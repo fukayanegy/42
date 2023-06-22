@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -20,6 +21,25 @@ size_t	ft_strlen(const char *s)
 	while (s[len] != '\0')
 		len++;
 	return (len);
+}
+
+char	*ft_skip_newline(char *s)
+{
+	size_t	i;
+	size_t	j;
+	char	*result;
+
+	i = 0;
+	while (s[i] != '\n' && s[i] != '\0')
+		i++;
+	result = malloc(sizeof(char) * (ft_strlen(s) - i + 1));
+	if (result == NULL)
+		return (NULL);
+	j = 0;
+	i++;
+	while (i < ft_strlen(s))
+		result[j++] = s[i++];
+	return (result);
 }
 
 char	*ft_search_newline(char *s)

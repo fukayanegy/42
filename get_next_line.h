@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:53 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/22 19:12:08 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/22 19:50:27 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_search_newline(char *s);
 char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_skip_newline(char *s);
 
 #endif
