@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -29,6 +28,10 @@ char	*ft_skip_newline(const char *s)
 	size_t	j;
 	char	*result;
 
+	if (s == NULL)
+	{
+		return (NULL);
+	}
 	i = 0;
 	while (s[i] != '\n' && s[i] != '\0')
 		i++;

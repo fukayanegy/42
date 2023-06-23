@@ -1,7 +1,13 @@
 a.out
 *.a
+*.o
 *.gch
 .DS_Store
+tester
+tester*
+.vscode
+*.out
+*.out*
 
 # 以下はintra提出時に不要なファイル
 # main.c
