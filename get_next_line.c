@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:57 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/24 14:36:49 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 14:40:46 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*get_next_line(int fd)
 	static char	*read_data;
 	ssize_t		read_size;
 
+	if (BUFFER_SIZE < 1)
+		return (NULL);
 	res = NULL;
 	if (read(fd, res, 0) == -1)
 		return (NULL);
