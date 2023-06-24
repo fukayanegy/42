@@ -6,13 +6,13 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:53 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/23 21:46:23 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:55:26 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 1
 
 # include <unistd.h>
 # include <stdlib.h>

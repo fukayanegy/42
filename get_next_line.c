@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:57 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/23 21:45:12 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 12:55:05 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ char	*get_next_line(int fd)
 	read_data = ft_skip_newline(read_data);
 	while (true)
 	{
-		read(fd, temporary_read_data, BUFFER_SIZE);
-		read_data = ft_strjoin(read_data, temporary_read_data);
-		res = ft_search_newline(read_data);
-		if (res != NULL)
+		if (read(fd, temporary_read_data, BUFFER_SIZE) <= 0)
 			break ;
+		read_data = ft_strjoin(read_data, temporary_read_data);
 	}
+	res = ft_search_newline(read_data);
 	return (res);
 }

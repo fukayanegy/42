@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
+	if (s == NULL)
+		return (0);
 	len = 0;
 	while (s[len] != '\0')
 		len++;
@@ -29,9 +31,7 @@ char	*ft_skip_newline(const char *s)
 	char	*result;
 
 	if (s == NULL)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (s[i] != '\n' && s[i] != '\0')
 		i++;
@@ -52,6 +52,8 @@ char	*ft_search_newline(char *s)
 	size_t	i;
 	size_t	j;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
