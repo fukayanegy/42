@@ -6,13 +6,13 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:53 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/24 12:55:26 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 14:37:54 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 100
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -20,7 +20,6 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include <stdio.h>
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);

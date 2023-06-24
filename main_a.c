@@ -6,11 +6,12 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 15:50:18 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/23 20:57:22 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 14:10:27 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+# include <stdio.h>
 
 int	main(void)
 {

@@ -6,11 +6,12 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:12:52 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/24 13:00:37 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 14:37:35 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+# include <stdio.h>
 # define TEST_PATH "test_2.txt"
 
 int	main(void)
