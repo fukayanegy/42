@@ -6,7 +6,7 @@
 #    By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/17 12:19:14 by etakaham          #+#    #+#              #
-#    Updated: 2023/06/23 21:10:30 by etakaham         ###   ########.fr        #
+#    Updated: 2023/06/24 13:06:44 by etakaham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 ADDFLAGS = -fsanitize=address -g
 SRCS	= get_next_line.c get_next_line_utils.c
+HSRCS	= get_next_line.h
 OBJS	= $(SRCS:.c=.o)
 
 .c.o:
@@ -33,6 +34,7 @@ fclean: clean
 
 re: fclean all
 
-new: re clean
+norm:
+	norminette -R CheckForbiddenSorceHeader $(SRCS) $(HSRCS)
 
 .PHONY: all fclean re clean

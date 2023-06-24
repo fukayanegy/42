@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 12:08:02 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/22 16:08:59 etakaham         ###   ########.fr       */
+/*   Created: 2023/06/24 13:07:11 by etakaham          #+#    #+#             */
+/*   Updated: 2023/06/24 13:08:19 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,9 @@ static void	ft_strjoin_support(char const *s1, char const *s2, char *res)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	s_1_len;
-	size_t	s_2_len;
-	char	*res;
+	size_t		s_1_len;
+	size_t		s_2_len;
+	char		*res;
 	const char	*empty_str = "";
 
 	if (s1 == NULL && s2 != NULL)
@@ -109,7 +109,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	else if (s1 != NULL && s2 == NULL)
 		return (ft_strjoin(s1, empty_str));
 	else if (s1 == NULL && s2 == NULL)
-		return(NULL);
+		return (NULL);
 	s_1_len = ft_strlen(s1);
 	s_2_len = ft_strlen(s2);
 	res = malloc((sizeof(char)) * (s_1_len + s_2_len + 1));
