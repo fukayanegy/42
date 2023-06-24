@@ -6,16 +6,19 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 12:07:53 by etakaham          #+#    #+#             */
-/*   Updated: 2023/06/24 15:26:49 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/06/24 19:52:03 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-// # define BUFFER_SIZE 1
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <stdbool.h>
 # include <sys/types.h>
 # include <sys/stat.h>

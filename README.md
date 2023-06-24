@@ -14,3 +14,6 @@ char *sを引数として、その引数に改行か終端文字があったら�
 char *sを引数として、その引数に改行か終端文字があったらそこまでをコピーして返す
 ### ft_strjoin
 char *型二つを引数にとって、それらを結合した文字列を返す
+## 使えそうなリンク
+1. [tester](https://github.com/Tripouille/gnlTester.git)
+2. [メモリリークの確認](https://qiita.com/ryo_manba/items/0ecffc15ead63e4900e8)
