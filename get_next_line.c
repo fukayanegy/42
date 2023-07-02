@@ -8,7 +8,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFA_SIZE <= 0)
 		return (0);
-	ft_read(fd, read_data);
+	read_data = ft_read(fd, read_data);
 	if (read_data == NULL)
 		return (NULL);
 	result = ft_copy_newline_before(read_data);
@@ -59,11 +59,11 @@ char	*ft_copy_newline_before(char *read_data)
 		result[i] = read_data[i];
 		i++;
 	}
-	if (read_data[i] == '\n')
-	{
-		result[i] = '\n';
-		i++;
-	}
+	// if (read_data[i] == '\n')
+	// {
+	// 	result[i] = '\n';
+	// 	i++;
+	// }
 	result[i] = '\0';
 	return (result);
 }
