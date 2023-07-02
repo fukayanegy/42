@@ -3,11 +3,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <unistd.h>
 #include <fcntl.h>
 
 size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
+bool	ft_is_include_newline(const char *s);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_copy_newline_before(char *read_data);
 char	*ft_copy_newline_after(char *read_data);

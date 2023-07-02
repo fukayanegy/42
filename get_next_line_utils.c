@@ -12,7 +12,7 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-char	*ft_strchr(const char *s, int c)
+bool	ft_is_include_newline(const char *s)
 {
 	size_t	i;
 
@@ -21,13 +21,11 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[++i]);
+		if (s[i] == '\n')
+			return (true);
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (0);
+	return (false);
 }
 
 char	*ft_strjoin(const char *s1, const char *s2)

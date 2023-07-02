@@ -1,16 +1,21 @@
 #include "get_next_line.h"
-#define BUFFA_SIZE 1
+#define BUFFA_SIZE 100
 
 char	*get_next_line(int fd)
 {
 	char		*result;
+	// read_data を配列にして配列の要素数をfdの整数値と見立てる
+	// そうするとボーナスができるようになる
 	static char	*read_data;
 
 	if (fd < 0 || BUFFA_SIZE <= 0)
-		return (0);
+		return (NULL);
 	read_data = ft_read(fd, read_data);
 	if (read_data == NULL)
+	{
+		free(read_data);
 		return (NULL);
+	}
 	result = ft_copy_newline_before(read_data);
 	read_data = ft_copy_newline_after(read_data);
 	return (result);
@@ -25,7 +30,7 @@ char	*ft_read(int fd, char *read_data)
 	if (temporary_read_data == NULL)
 		return (NULL);
 	read_size = 1;
-	while (ft_strchr(read_data, '\n') == NULL && read_size != 0)
+	while (!ft_is_include_newline(read_data) && read_size != 0)
 	{
 		read_size = read(fd, temporary_read_data, BUFFA_SIZE);
 		if (read_size == -1)
@@ -35,6 +40,11 @@ char	*ft_read(int fd, char *read_data)
 		}
 		temporary_read_data[read_size] = '\0';
 		read_data = ft_strjoin(read_data, temporary_read_data);
+		if (read_data == NULL)
+		{
+			free(temporary_read_data);
+			return (NULL);
+		}
 	}
 	free(temporary_read_data);
 	return (read_data);
@@ -59,11 +69,6 @@ char	*ft_copy_newline_before(char *read_data)
 		result[i] = read_data[i];
 		i++;
 	}
-	// if (read_data[i] == '\n')
-	// {
-	// 	result[i] = '\n';
-	// 	i++;
-	// }
 	result[i] = '\0';
 	return (result);
 }
