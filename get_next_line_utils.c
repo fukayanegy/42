@@ -28,7 +28,7 @@ bool	ft_is_include_newline(const char *s)
 	return (false);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char *s1, const char *s2)
 {
 	size_t	i;
 	size_t	j;
