@@ -1,14 +1,26 @@
-#ifndef GET_NEXT_LINE
-#define GET_NEXT_LINE
-#ifndef BUFFA_SIZE
-#define BUFFA_SIZE 1
-#endif
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/02 17:14:15 by etakaham          #+#    #+#             */
+/*   Updated: 2023/07/02 17:41:44 by etakaham         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <unistd.h>
-#include <fcntl.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# ifndef BUFFA_SIZE
+# define BUFFA_SIZE 1
+# endif
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 size_t	ft_strlen(const char *s);
 bool	ft_is_include_newline(const char *s);

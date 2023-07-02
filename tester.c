@@ -17,7 +17,7 @@ int	main(void)
 	while (buffer)
 	{
 		buffer = get_next_line(fd);
-		printf("%s\n", buffer);
+		printf("%s", buffer);
 		free(buffer);
 	}
 	close(fd);
@@ -45,4 +45,10 @@ int	main(void)
 	// printf("result is %s\n", result);
 
 	return (0);
+}
+#include <libc.h>
+
+__attribute__((destructor))
+static void destructor() {
+    system("leaks -q a.out");
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 14:12:06 by etakaham          #+#    #+#             */
-/*   Updated: 2023/07/02 14:20:064 by etakaham         ###   ########.fr       */
+/*   Created: 2023/07/02 17:11:13 by etakaham          #+#    #+#             */
+/*   Updated: 2023/07/02 17:48:50 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ char	*ft_read(int fd, char *read_data, bool *is_finish)
 		if (read_size <= 0)
 		{
 			free(temporary_read_data);
-			return (read_size == 0 ? read_data : NULL);
+			if (read_size == 0)
+				return (read_data);
+			else
+				return (NULL);
 		}
 		temporary_read_data[read_size] = '\0';
 		tmp = read_data;
@@ -108,7 +111,6 @@ char	*ft_copy_newline_after(char *read_data)
 	i = 0;
 	while (read_data[i] != '\0' && read_data[i] != '\n')
 		i++;
-	
 	if (read_data[i] == '\0')
 		return (NULL);
 	result = malloc(sizeof(char) * (ft_strlen(read_data) - i + 1));
