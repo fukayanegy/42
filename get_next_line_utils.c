@@ -65,3 +65,53 @@ char	*ft_strjoin(char *s1, const char *s2)
 	result[i] = '\0';
 	return (result);
 }
+
+char	*ft_copy_newline_before(char *read_data)
+{
+	ssize_t	i;
+	char	*result;
+
+	i = 0;
+	if (read_data[i] == '\0')
+		return (NULL);
+	while (read_data[i] != '\0' && read_data[i] != '\n')
+		i++;
+	result = malloc(sizeof(char) * (i + 2));
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (read_data[i] != '\0' && read_data[i] != '\n')
+	{
+		result[i] = read_data[i];
+		i++;
+	}
+	if (read_data[i] == '\n')
+	{
+		result[i] = '\n';
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
+}
+
+char	*ft_copy_newline_after(char *read_data)
+{
+	ssize_t	i;
+	ssize_t	j;
+	char	*result;
+
+	i = 0;
+	while (read_data[i] != '\0' && read_data[i] != '\n')
+		i++;
+	if (read_data[i] == '\0')
+		return (NULL);
+	result = malloc(sizeof(char) * (ft_strlen(read_data) - i + 1));
+	if (result == NULL)
+		return (NULL);
+	i++;
+	j = 0;
+	while (read_data[i] != '\0')
+		result[j++] = read_data[i++];
+	result[j] = '\0';
+	return (result);
+}
