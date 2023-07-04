@@ -37,11 +37,48 @@ char	*get_next_line(int fd)
 	return (result);
 }
 
+int	helper(ssize_t *read_size, char *tmp_read_data, char *read_data, int fd)
+{
+	*read_size = read(fd, tmp_read_data, BUFFA_SIZE);
+	if (*read_size <= 0)
+	{
+		free(tmp_read_data);
+		if (*read_size == 0)
+			return (1);
+		else
+			return (2);
+	}
+	tmp_read_data[*read_size] = '\0';
+	return (0);
+}
+
+void	helper_2(ssize_t read_size, bool *is_finish, char *tmp_read_data)
+{
+	if (read_size == 0)
+		*is_finish = true;
+	free(tmp_read_data);
+}
+
+int	helper_3(char *read_data, char *tmp_read_data)
+{
+	char	*tmp;
+
+	tmp = read_data;
+	read_data = ft_strjoin(read_data, tmp_read_data);
+	free(tmp);
+	if (read_data == NULL)
+	{
+		return (1);
+	}
+	return (0);
+}
+
 char	*ft_read(int fd, char *read_data, bool *is_finish)
 {
 	char	*tmp_read_data;
 	char	*tmp;
 	ssize_t	read_size;
+	int		test;
 
 	tmp_read_data = malloc(sizeof(char) * (BUFFA_SIZE + 1));
 	if (tmp_read_data == NULL)
@@ -49,16 +86,11 @@ char	*ft_read(int fd, char *read_data, bool *is_finish)
 	read_size = 1;
 	while (!ft_is_include_newline(read_data) && read_size > 0)
 	{
-		read_size = read(fd, tmp_read_data, BUFFA_SIZE);
-		if (read_size <= 0)
-		{
-			free(tmp_read_data);
-			if (read_size == 0)
-				return (read_data);
-			else
-				return (NULL);
-		}
-		tmp_read_data[read_size] = '\0';
+		test = helper(&read_size, tmp_read_data, read_data, fd);
+		if (test == 1)
+			return (read_data);
+		else if (test == 2)
+			return (NULL);
 		tmp = read_data;
 		read_data = ft_strjoin(read_data, tmp_read_data);
 		free(tmp);
@@ -68,8 +100,6 @@ char	*ft_read(int fd, char *read_data, bool *is_finish)
 			return (NULL);
 		}
 	}
-	if (read_size == 0)
-		*is_finish = true;
-	free(tmp_read_data);
+	helper_2(read_size, is_finish, tmp_read_data);
 	return (read_data);
 }
