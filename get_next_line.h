@@ -29,5 +29,6 @@ char	*ft_copy_newline_before(char *read_data);
 char	*ft_copy_newline_after(char *read_data);
 char	*ft_read(int fd, char *read_data, bool *is_finish);
 char	*get_next_line(int fd);
+int		ft_read_help(char *read_data, char *tmp_read_data, int fd, size_t read_size);
 
 #endif
