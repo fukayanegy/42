@@ -6,14 +6,14 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:14:15 by etakaham          #+#    #+#             */
-/*   Updated: 2023/07/02 17:41:44 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:12:45 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# ifndef BUFFA_SIZE
-# define BUFFA_SIZE 1
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
 # endif
 
 # include <stdio.h>

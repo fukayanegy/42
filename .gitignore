@@ -3,4 +3,6 @@
 *.out
 *.out*
 *.gch
+*.o
 tester
+*.a

@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:11:13 by etakaham          #+#    #+#             */
-/*   Updated: 2023/07/02 17:48:50 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:12:00 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*get_next_line(int fd)
 	bool		is_finish;
 
 	is_finish = false;
-	if (fd < 0 || BUFFA_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	read_data = ft_read(fd, read_data, &is_finish);
 	if (read_data == NULL)
@@ -39,7 +39,7 @@ char	*get_next_line(int fd)
 
 int	helper(ssize_t *read_size, char *tmp_read_data, int fd)
 {
-	*read_size = read(fd, tmp_read_data, BUFFA_SIZE);
+	*read_size = read(fd, tmp_read_data, BUFFER_SIZE);
 	if (*read_size <= 0)
 	{
 		free(tmp_read_data);
@@ -80,7 +80,7 @@ char	*ft_read(int fd, char *read_data, bool *is_finish)
 	ssize_t	read_size;
 	int		test;
 
-	tmp_read_data = malloc(sizeof(char) * (BUFFA_SIZE + 1));
+	tmp_read_data = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (tmp_read_data == NULL)
 		return (NULL);
 	read_size = 1;

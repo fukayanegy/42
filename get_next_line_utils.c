@@ -6,7 +6,7 @@
 /*   By: etakaham <kakigoori00007@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:16:03 by etakaham          #+#    #+#             */
-/*   Updated: 2023/07/02 17:16:04 by etakaham         ###   ########.fr       */
+/*   Updated: 2023/07/05 20:28:39 by etakaham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ bool	ft_is_include_newline(const char *s)
 
 	i = 0;
 	if (s == NULL)
-		return (NULL);
+		return (false);
 	while (s[i] != '\0')
 	{
 		if (s[i] == '\n')

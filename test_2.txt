@@ -1,0 +1,10 @@
+1. What would you like to have?
+2. I will have this one and this one.
+3. One Hamburger and a Medium Coffee please.
+4. One Hamburger and a Coffee please.
+5. We have 3 sizes for coffee, Small, Medium and Large.
+6. Which size would you like?
+7. Small one, please.
+8. 2 Coffee's Please. One is Small and the other is a Medium.
+9. We have 3 sizes, Short, Tall and Grande.
+0. Which size would you like?
