@@ -37,7 +37,7 @@ char	*get_next_line(int fd)
 	return (result);
 }
 
-int	helper(ssize_t *read_size, char *tmp_read_data, char *read_data, int fd)
+int	helper(ssize_t *read_size, char *tmp_read_data, int fd)
 {
 	*read_size = read(fd, tmp_read_data, BUFFA_SIZE);
 	if (*read_size <= 0)
@@ -86,7 +86,7 @@ char	*ft_read(int fd, char *read_data, bool *is_finish)
 	read_size = 1;
 	while (!ft_is_include_newline(read_data) && read_size > 0)
 	{
-		test = helper(&read_size, tmp_read_data, read_data, fd);
+		test = helper(&read_size, tmp_read_data, fd);
 		if (test == 1)
 			return (read_data);
 		else if (test == 2)

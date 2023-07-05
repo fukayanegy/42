@@ -28,7 +28,9 @@ char	*ft_strjoin(char *s1, const char *s2);
 char	*ft_copy_newline_before(char *read_data);
 char	*ft_copy_newline_after(char *read_data);
 char	*ft_read(int fd, char *read_data, bool *is_finish);
+int		helper(ssize_t *read_size, char *tmp_read_data, int fd);
+void	helper_2(ssize_t read_size, bool *is_finish, char *tmp_read_data);
+char	*helper_3(char *s1, char *s2);
 char	*get_next_line(int fd);
-int		ft_read_help(char *read_data, char *tmp_read_data, int fd, size_t read_size);
 
 #endif
