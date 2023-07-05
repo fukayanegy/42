@@ -59,24 +59,24 @@ void	helper_2(ssize_t read_size, bool *is_finish, char *tmp_read_data)
 	free(tmp_read_data);
 }
 
-int	helper_3(char *read_data, char *tmp_read_data)
+char	*helper_3(char *s1, char *s2)
 {
 	char	*tmp;
 
-	tmp = read_data;
-	read_data = ft_strjoin(read_data, tmp_read_data);
-	free(tmp);
-	if (read_data == NULL)
+	tmp = ft_strjoin(s1, s2);
+	if (tmp == NULL)
 	{
-		return (1);
+		free(s1);
+		free(s2);
+		return (NULL);
 	}
-	return (0);
+	free(s1);
+	return (tmp);
 }
 
 char	*ft_read(int fd, char *read_data, bool *is_finish)
 {
 	char	*tmp_read_data;
-	char	*tmp;
 	ssize_t	read_size;
 	int		test;
 
@@ -91,14 +91,9 @@ char	*ft_read(int fd, char *read_data, bool *is_finish)
 			return (read_data);
 		else if (test == 2)
 			return (NULL);
-		tmp = read_data;
-		read_data = ft_strjoin(read_data, tmp_read_data);
-		free(tmp);
+		read_data = helper_3(read_data, tmp_read_data);
 		if (read_data == NULL)
-		{
-			free(tmp_read_data);
 			return (NULL);
-		}
 	}
 	helper_2(read_size, is_finish, tmp_read_data);
 	return (read_data);
